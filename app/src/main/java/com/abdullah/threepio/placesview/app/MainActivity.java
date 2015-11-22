@@ -9,23 +9,34 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
+import com.abdullah.threepio.placesview.PlacesAutoCompleteEditText;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.places.Places;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
+
+public class MainActivity extends AppCompatActivity
+        implements GoogleApiClient.OnConnectionFailedListener {
+
+    public static final LatLngBounds WHOLE_INDIA
+            = new LatLngBounds(new LatLng(8, 65), new LatLng(37, 100));
+
+    GoogleApiClient googleApiClient;
+    PlacesAutoCompleteEditText placesView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setupUI();
+        googleApiClient = new GoogleApiClient.Builder(this)
+                .enableAutoManage(this, 1, this)
+                .addApi(Places.GEO_DATA_API)
+                .addApi(Places.PLACE_DETECTION_API)
+                .build();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        placesView.setGoogleApiClient(googleApiClient);
+
     }
 
     @Override
@@ -48,5 +59,18 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onConnectionFailed(ConnectionResult connectionResult) {
+
+    }
+
+
+    private void setupUI() {
+        setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        placesView = (PlacesAutoCompleteEditText) findViewById(R.id.places_view);
     }
 }
