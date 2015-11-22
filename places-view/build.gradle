@@ -1,0 +1,39 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.0"
+
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.google.android.gms:play-services-location:8.1.0'
+}
+
+ext {
+    project_version = '1.0.0'
+    artifact_id     = 'places-view'
+    project_name    = 'Threepio PlacesView'
+    project_desc    = 'Auto complete places edit text.'
+    project_url     = 'https://github.com/abdullah-chhatra/threepio-places-view'
+    git_url         = 'https://github.com/abdullah-chhatra/threepio-places-view.git'
+}
+
+apply from: 'https://raw.githubusercontent.com/abdullah-chhatra/threepio-scripts/master/bintrayupload.gradle'

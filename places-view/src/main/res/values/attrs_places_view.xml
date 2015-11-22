@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PlacesAutoCompleteEditText" >
+        <attr name="item_layout" format="reference" />
+        <attr name="item_text_id" format="reference" />
+        <attr name="north_bound" format="float" />
+        <attr name="south_bound" format="float" />
+        <attr name="east_bound" format="float" />
+        <attr name="west_bound" format="float" />
+    </declare-styleable>
+</resources>
