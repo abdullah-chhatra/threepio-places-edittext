@@ -1,4 +1,4 @@
-package com.abdullah.threepio.placesview;
+package com.abdullah.threepio.placesview.app;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;

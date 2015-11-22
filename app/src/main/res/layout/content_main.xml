@@ -13,8 +13,16 @@
     tools:showIn="@layout/activity_main"
     tools:context=".MainActivity">
 
-    <TextView
-        android:text="Hello World!"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <free.abdullah.threepio.placesview.PlacesAutoCompleteEditText
+        android:id="@+id/places_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:south_bound="8"
+        app:west_bound="65"
+        app:north_bound="37"
+        app:east_bound="100"
+        app:item_layout="@layout/autocomplete_item"
+        app:item_text_id="@+id/text1"/>
+
+
 </RelativeLayout>
