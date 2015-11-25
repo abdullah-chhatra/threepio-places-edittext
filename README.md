@@ -27,13 +27,13 @@ Please check out Google Places API documentation on how to get the API Key.
 Add following into your project level build.gradle file:
 
 ```Gradle
-compile 'com.abdullah.threepio:places-view:1.0.0'
+compile 'com.abdullah.threepio:places-edittext:1.0.0'
 ```
 
 ###Placing the view in your layout XML###
 
 ```XML
-<com.abdullah.threepio.placesview.PlacesAutoCompleteEditText
+<com.abdullah.threepio.placesedittext.PlacesAutoCompleteEditText
         android:id="@+id/places_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
