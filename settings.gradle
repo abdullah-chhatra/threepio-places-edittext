@@ -1,1 +1,1 @@
-include ':app', ':places-view'
+include ':app', ':places-edittext'

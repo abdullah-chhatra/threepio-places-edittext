@@ -13,7 +13,7 @@
     tools:showIn="@layout/activity_main"
     tools:context=".MainActivity">
 
-    <com.abdullah.threepio.placesview.PlacesAutoCompleteEditText
+    <com.abdullah.threepio.placesedittext.PlacesAutoCompleteEditText
         android:id="@+id/places_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
