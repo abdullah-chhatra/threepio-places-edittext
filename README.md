@@ -24,7 +24,19 @@ In order to use the view you need to have a valid Google Places API key. Place t
 Please check out Google Places API documentation on how to get the API Key.
 
 ###Import the library###
-Add following into your project level build.gradle file:
+Add following into your project level `build.gradle` file:
+
+```Gradle
+allprojects {
+    repositories {
+        //Other repositories
+        maven {
+            url  "http://dl.bintray.com/achhatra/maven"
+        }
+    }
+}
+```
+Add following dependency into your module level `build.gradle` file:
 
 ```Gradle
 compile 'com.abdullah.threepio:places-edittext:1.0.0'
